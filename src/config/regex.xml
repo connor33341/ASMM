@@ -1,0 +1,34 @@
+<patterns>
+    <rule>
+        <pattern>MSG:\s*DB\((.*?)\);</pattern>
+        <replacement>    msg db \1</replacement>
+    </rule>
+    <rule>
+        <pattern>LEN:\s*EQ\(\$ - MSG\);</pattern>
+        <replacement>    len equ $ - msg</replacement>
+    </rule>
+    <rule>
+        <pattern>GLOBAL\((.*?)\);</pattern>
+        <replacement>    global \1</replacement>
+    </rule>
+    <rule>
+        <pattern>_start:\s*{</pattern>
+        <replacement>_start:</replacement>
+    </rule>
+    <rule>
+        <pattern>MOV\((.*?), (.*?)\);</pattern>
+        <replacement>    mov \1, \2</replacement>
+    </rule>
+    <rule>
+        <pattern>XOR\((.*?), (.*?)\);</pattern>
+        <replacement>    xor \1, \2</replacement>
+    </rule>
+    <rule>
+        <pattern>INT\((.*?)\);</pattern>
+        <replacement>    int \1</replacement>
+    </rule>
+    <rule>
+        <pattern>}</pattern>
+        <replacement></replacement>
+    </rule>
+</patterns>
