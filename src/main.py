@@ -25,8 +25,10 @@ class Main:
         self.ArgParser.Parse()
         self.Args = self.ArgParser.Args
         self.ArgClass = Args(self.Args)
-        self.Project = Project(self.Args.config)
+        self.Project = Project()
         self.Project.Args = self.ArgClass
+        self.Project.HandleArgs()
+        self.Project.LoadProject()
 if __name__ == "__main__":
     log("Initalization")
     MainClass = Main()

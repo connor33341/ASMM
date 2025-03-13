@@ -36,7 +36,9 @@ class LoadProject():
             log(f"Building: {len(self.Target)} files")
         except Exception as Error:
             log(f"JSON File may have errors: {Error}","ERROR")
-    def ValidateFiles(self):
+    def ValidateFiles(self) -> bool:
         OutputExists = os.path.isdir(self.OutputDir)
         if not OutputExists:
             log(f"JSON Output path is not valid: {OutputExists}",OutputType.ERROR,OutputType.THROWS)
+        log("Files exist")
+        return True

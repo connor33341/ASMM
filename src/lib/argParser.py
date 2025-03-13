@@ -21,5 +21,6 @@ class ArgParser:
             log(f"Invalid Args: {Error}","ERROR",True)
 
     def Parse(self) -> None:
+        log("Parsing")
         self.Args = self.Parser.parse_args()
         #print(type(self.Args)) argparse.Namespace
