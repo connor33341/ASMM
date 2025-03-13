@@ -1,7 +1,7 @@
 {
     "target": "x86",
     "files": ["main.asmm"],
-    "output": "/build",
+    "output": "build",
     "version":"1.0",
     "compile":"false"
 }

@@ -35,3 +35,4 @@ class Project:
         self.ValidDirs = self.ProjectLoader.ValidateFiles()
         if self.ValidDirs:
             log("Directory Validated")
+            
