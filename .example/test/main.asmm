@@ -1,12 +1,12 @@
-Section("data"): {
+Section("data") {
     MSG: DB("Hello, World!", 0xA); // Message followed by newline
     LEN: EQ($ - MSG); // Calculate length of message
 }
 
-Section("text"): {
+Section("text") {
     GLOBAL(_start);
 
-    _start: {
+    _start {
         MOV(EAX, 4);  // syscall number for sys_write
         MOV(EBX, 1);  // file descriptor 1 (stdout)
         MOV(ECX, MSG); // pointer to message
