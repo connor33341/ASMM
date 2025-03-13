@@ -37,6 +37,6 @@ class LoadProject():
         #print(self.NormalizedOutput)
         OutputExists = os.path.isdir(self.NormalizedOutput)
         if not OutputExists:
-            os.mkdir(self.NormalizedOutput)
+            os.makedirs(self.NormalizedOutput,exist_ok=True)
         log("Files exist")
         return True

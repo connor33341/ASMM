@@ -15,4 +15,11 @@ class PatternLoader:
         for Rule in self.Root.findall("rule"):
             Pattern = Rule.find("pattern").text
             Replacement = Rule.find("replacement").text
-            self.Patterns[Pattern] = Replacement
+            Whitespace = True
+            try:
+                WhitespaceText = Rule.find("whitespace").text
+                if str(WhitespaceText).lower() == "false":
+                    Whitespace = False
+            except Exception as Error:
+                pass
+            self.Patterns[Pattern] = [Replacement,Whitespace]

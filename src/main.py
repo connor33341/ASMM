@@ -1,6 +1,7 @@
 import logging
 import uuid
 from lib.argParser import ArgParser
+from lib.translator import Translator
 from utils.patternLoader import PatternLoader
 from utils.loadProject import LoadProject
 from utils.globalLogger import log
@@ -21,10 +22,12 @@ class Main:
         self.Project = Project()
         self.Project.Args = self.ArgClass
         self.Project.HandleArgs()
-        self.Project.LoadProject()
         self.PatternLoader = PatternLoader("src/config/regex.xml")
         self.PatternLoader.Load()
         self.Patterns = self.PatternLoader.Patterns
+        self.Project.Patterns = self.Patterns
+        self.Project.LoadProject()
+        log("Build Completed")
 if __name__ == "__main__":
     log("Initalization")
     MainClass = Main()

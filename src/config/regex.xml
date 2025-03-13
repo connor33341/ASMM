@@ -31,4 +31,17 @@
         <pattern>}</pattern>
         <replacement></replacement>
     </rule>
+    <rule>
+        <pattern>//</pattern>
+        <replacement>;</replacement>
+    </rule>
+    <rule>
+        <!--<whitespace>false</whitespace>-->
+        <pattern> {</pattern><!--Ugly workaround-->
+        <replacement>:</replacement>
+    </rule>
+    <rule>
+        <pattern>#</pattern>
+        <replacement>section .</replacement>
+    </rule>
 </patterns>
