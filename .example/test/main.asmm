@@ -1,9 +1,9 @@
-#data {
+section data {
     MSG: DB("Hello, World!", 0xA); // Message followed by newline
     LEN: EQ($ - MSG); // Calculate length of message
 }
 
-#text {
+section text {
     GLOBAL(_start);
 }
 

@@ -1,11 +1,16 @@
+<!--Built the REGEX on: https://regex101.com/-->
 <patterns>
-    <rule>
-        <pattern>MSG:\s*DB\((.*?)\);</pattern>
-        <replacement>    msg db \1</replacement>
+    <!--<rule>
+        <pattern>MSG:\s*(.*?)\((.*?)\)</pattern>
+        <replacement>    msg \1 \2</replacement>
     </rule>
     <rule>
         <pattern>LEN:\s*EQ\(\$ - MSG\);</pattern>
         <replacement>    len equ $ - msg</replacement>
+    </rule> -->
+    <rule>
+        <pattern>(.*?):\s*(.*?)\((.*?)\);</pattern>
+        <replacement>\1 \2 \3</replacement>
     </rule>
     <rule>
         <pattern>GLOBAL\((.*?)\);</pattern>
@@ -16,6 +21,10 @@
         <replacement>_start:</replacement>
     </rule>
     <rule>
+        <pattern>"(\b\w+)\((.*?), (.*?)\);"g</pattern>
+        <replacement>\1 \2 \3</replacement>
+    </rule>
+    <!--<rule>
         <pattern>MOV\((.*?), (.*?)\);</pattern>
         <replacement>    mov \1, \2</replacement>
     </rule>
@@ -26,9 +35,17 @@
     <rule>
         <pattern>INT\((.*?)\);</pattern>
         <replacement>    int \1</replacement>
+    </rule>-->
+    <rule>
+        <pattern>[()]</pattern>
+        <replacement> </replacement>
     </rule>
     <rule>
         <pattern>}</pattern>
+        <replacement></replacement>
+    </rule>
+     <rule>
+        <pattern>;</pattern>
         <replacement></replacement>
     </rule>
     <rule>
@@ -41,7 +58,7 @@
         <replacement>:</replacement>
     </rule>
     <rule>
-        <pattern>#</pattern>
+        <pattern>section\s*</pattern>
         <replacement>section .</replacement>
     </rule>
 </patterns>
