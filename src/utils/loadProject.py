@@ -2,16 +2,7 @@ import json
 import logging
 import os
 from values.outputType import OutputType
-
-logger = logging.getLogger(__name__)
-def log(Text: str,Level: str = "INFO",Throws: bool = False):
-    if Level == "INFO":
-        logger.info(Text)
-    elif Level == "ERROR":
-        logger.error(Text)
-        if Throws:
-            raise Exception(Text)
-    print(f"[{Level}]: {Text}")
+from utils.globalLogger import log
 
 class LoadProject():
     def __init__(self,ProjectFile: str = ""):
@@ -43,7 +34,7 @@ class LoadProject():
     
     def ValidateFiles(self) -> bool:
         self.NormalizedOutput = self.NormalizeDir(self.OutputDir)
-        print(self.NormalizedOutput)
+        #print(self.NormalizedOutput)
         OutputExists = os.path.isdir(self.NormalizedOutput)
         if not OutputExists:
             os.mkdir(self.NormalizedOutput)
