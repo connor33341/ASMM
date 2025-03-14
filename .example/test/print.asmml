@@ -1,4 +1,5 @@
 // Don't add to project.json as it is not a main file, just library
+// Test
 extern print {
     function printstr {
         PUSH(rbp);
