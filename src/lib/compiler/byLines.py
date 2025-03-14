@@ -2,6 +2,7 @@ from utils.globalLogger import log
 
 class ByLines:
     def __init__(self,Data: str = ""):
+        log("Line Parser Init")
         self.Data = Data
         self.Index = 0
         self.Lines = str(self.Data).splitlines()
@@ -25,6 +26,7 @@ class ByLines:
         self.EditedLines.insert(Index,Data)
 
     def Stitch(self):
+        log("Generating Edited File")
         self.EditedData = ""
         for Line in self.EditedLines:
             self.EditedData = self.EditedData + f"{Line}\n"
