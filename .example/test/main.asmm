@@ -1,6 +1,10 @@
+import print.asmml {
+    PRINT
+}
+
 section data {
-    MSG: DB("Hello, World!", 0xA); // Message followed by newline
-    LEN: EQ($ - MSG); // Calculate length of message
+    MSG:DB("Hello, World!", 0xA); // Message followed by newline
+    LEN:EQ($ - MSG); // Calculate length of message
 }
 
 section text {

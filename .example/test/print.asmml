@@ -1,0 +1,25 @@
+// Don't add to project.json as it is not a main file, just library
+extern print {
+    function printstr {
+        PUSH(rbp);
+        MOV(rbp,rps);
+        MOV(rsi,rdi);
+        XOR(rcx,rcx); // Use RCX as a counter
+    }
+    
+    label find_length {
+        CMP(BYTE [RSI+RCX],0);
+        JE(length_found);
+        INC(rcx);
+        JMP(find_length);
+    }
+
+    label length_found [
+        MOV(rdx,rcx);
+        MOV(rax,1);
+        MOV(rdi,1);
+        syscall;
+        pop(rbp);
+        ret
+    ]
+}

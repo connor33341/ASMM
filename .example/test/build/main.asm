@@ -1,3 +1,7 @@
+import print.asmml:
+    print
+
+
 section .data:
     msg db "hello, world!", 0xa ; message followed by newline
     len eq $ - msg ; calculate length of message
